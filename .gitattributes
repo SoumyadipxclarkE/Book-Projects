@@ -1,2 +1,51 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+
+public class Book
+{
+    int bookid;
+    String bookname;
+    int price;
+
+    Book(int bid, String bname, int price)
+    {
+        bookid = bid;
+        bookname = bname;
+        this.price = price;
+    }
+    void display()
+    {
+        System.out.println("id "+bookid);
+        System.out.println("Name "+bookname);
+        System.out.println("price "+price);
+    }
+}
+class Input
+{
+    public static Book details()
+    {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.println("Enter book id: ");
+        int bid = sc.nextInt();
+        System.out.println("Enter book name: ");
+        String bname = sc.next();
+        System.out.println("Enter the price amount: ");
+        int price = sc.nextInt();
+
+        Book b1 = new Book(bid,bname,price);
+        return b1;
+
+    }
+}
+class Quantity
+{
+    public static void main(String[] args)
+    {
+        Book sc1 = Input.details();
+        sc1.display();;
+        Book sc2 = Input.details();
+        sc2.display();
+        Book sc3 = Input.details();
+        sc3.display();
+    }
+}
+
